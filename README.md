@@ -88,7 +88,7 @@ python PRISM/LLaDA/LLaDA_Prism/metrics/gsm8k_all.py
 ```
 
 ### Acknowledgements
-This project is built upon https://github.com/preordinary/LLaDA2, https://github.com/ML-GSAI/LLaDA, https://github.com/DreamLM/Dream and https://github.com/EleutherAI/lm-evaluation-harness. Special thanks to the authors for their contributions.
+This project is built upon [preordinary/LLaDA2](https://github.com/preordinary/LLaDA2), [ML-GSAI/LLaDA](https://github.com/ML-GSAI/LLaDA), [DreamLM/Dream](https://github.com/DreamLM/Dream) and [EleutherAI/lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness). Special thanks to the authors for their contributions.
 
 
 
