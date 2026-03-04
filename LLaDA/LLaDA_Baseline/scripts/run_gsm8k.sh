@@ -6,12 +6,10 @@ set -x
 PROJECT_ROOT="<PATH_TO_YOUR_ROOT>"
 cd "$PROJECT_ROOT"
 
-MODEL_PATH="<PATH_TO_YOUR_LLaDA_8B_INSTRUCT_WEIGHTS>"
+MODEL_PATH="GSAI-ML/LLaDA-8B-Instruct"
 
 BASE_OUTPUT_PATH="${PROJECT_ROOT}/outputs/results_gsm8k"
 
-export CUDA_VISIBLE_DEVICES=0
-export HF_ENDPOINT=https://hf-mirror.com
 
 LENGTH=256
 STEPS=32   
@@ -21,7 +19,7 @@ NAME="baseline"
 
 mkdir -p "${BASE_OUTPUT_PATH}/${NAME}"
 
-accelerate launch evaluation_script.py \
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 accelerate launch evaluation_script.py \
     --model LLaDA \
     --tasks ${TASK} \
     --batch_size 1 \

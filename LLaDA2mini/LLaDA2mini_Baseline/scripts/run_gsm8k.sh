@@ -3,12 +3,11 @@ set -e
 set -x
 
 PROJECT_ROOT="<PATH_TO_YOUR_PROJECT_ROOT>"
-MODEL_PATH="<PATH_TO_YOUR_LLADA2_MINI_WEIGHTS>"
+MODEL_PATH="inclusionAI/LLaDA2.0-mini"
 BASE_OUTPUT_PATH="${PROJECT_ROOT}/outputs/baseline_gsm8k"
 
 cd "$PROJECT_ROOT"
-export CUDA_VISIBLE_DEVICES=0
-export HF_ENDPOINT=https://hf-mirror.com
+
 
 LENGTH=256
 STEPS=32
@@ -19,7 +18,7 @@ NAME="baseline_n1"
 
 mkdir -p "${BASE_OUTPUT_PATH}/${NAME}"
 
-accelerate launch evaluation_script.py \
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 accelerate launch evaluation_script.py \
     --model LLaDA2 \
     --tasks ${TASK} \
     --batch_size 1 \
